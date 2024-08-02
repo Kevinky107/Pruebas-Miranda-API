@@ -30,12 +30,12 @@ form.addEventListener("submit", function(event) {
 btn.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("clicked")
+
     fetch("https://olqdivqcuh.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formJSON)
+        }
     })
     .then(response => response.json())
     .then(data => {
