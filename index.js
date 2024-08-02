@@ -1,6 +1,8 @@
 const form = document.querySelector("form");
 const btn = document.getElementById("rooms");
 
+const token = {}
+
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -21,6 +23,7 @@ form.addEventListener("submit", function(event) {
     .then(response => response.json())
     .then(data => {
         console.log("Success:", data);
+        token = data.token;
     })
     .catch(error => {
         console.error("Error:", error);
@@ -34,7 +37,8 @@ btn.addEventListener("click", function(event) {
     fetch("https://olqdivqcuh.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "authorization" : `Bearer ${token}`
         }
     })
     .then(response => response.json())
