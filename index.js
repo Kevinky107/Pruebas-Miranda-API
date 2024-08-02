@@ -38,7 +38,7 @@ btn.addEventListener("click", function(event) {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "authorization" : `Bearer ${secretKey}`
+            "Authorization" : `Bearer ${secretKey}`
         }
     })
     .then(response => response.json())
