@@ -34,12 +34,13 @@ btn.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("clicked")
 
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${secretKey}`);
+
     fetch("https://olqdivqcuh.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
         method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization" : `Bearer ${secretKey}`
-        }
+        headers: myHeaders
     })
     .then(response => response.json())
     .then(data => {
