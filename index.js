@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const btn = document.getElementById("rooms");
 
-let token = {}
+let secretKey = {}
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -23,7 +23,7 @@ form.addEventListener("submit", function(event) {
     .then(response => response.json())
     .then(data => {
         console.log("Success:", data);
-        token = data.token;
+        secretKey = data.token;
     })
     .catch(error => {
         console.error("Error:", error);
@@ -38,7 +38,7 @@ btn.addEventListener("click", function(event) {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "authorization" : `Bearer ${token}`
+            "authorization" : `Bearer ${secretKey}`
         }
     })
     .then(response => response.json())
