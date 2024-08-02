@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const btn = document.getElementById("rooms");
 
-const token = {}
+let token = {}
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
