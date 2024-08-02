@@ -32,13 +32,11 @@ form.addEventListener("submit", function(event) {
 
 btn.addEventListener("click", function(event) {
     event.preventDefault();
-    console.log("clicked")
+    console.log(secretKey)
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", `Bearer ${secretKey}`);
-
-    console.log(myHeaders);
 
     fetch("https://olqdivqcuh.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
         method: "GET",
