@@ -23,7 +23,7 @@ form.addEventListener("submit", function(event) {
     .then(response => response.json())
     .then(data => {
         console.log("Success:", data);
-        secretKey = data.token;
+        secretKey = data.Token;
     })
     .catch(error => {
         console.error("Error:", error);
