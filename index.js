@@ -35,7 +35,7 @@ btn.addEventListener("click", function(event) {
     console.log("clicked")
 
     fetch("https://olqdivqcuh.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
-        method: "GUET",
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
             "authorization" : `Bearer ${token}`
