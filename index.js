@@ -29,8 +29,7 @@ form.addEventListener("submit", function(event) {
 
 btn.addEventListener("click", function(event) {
     event.preventDefault();
-
-
+    console.log("clicked")
     fetch("https://ufuj3gm3b3.execute-api.eu-west-3.amazonaws.com/dev/rooms", {
         method: "POST",
         headers: {
